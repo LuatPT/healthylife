@@ -1,14 +1,15 @@
 import React from 'react'
 
 class SearchFood extends React.PureComponent{
-    onChange = () => {
-        
+    searchFoodOnChange = (eve) => {
+        eve.preventDefault();
+        const {searchFood} = this.props;
+        searchFood(eve.target.value);
     }
     render(){
         return(
-            <div className="row ">
-                  <input className="col-md-9" type="search" placeholder="Search"/>
-                   <button className="btn btn-outline-success col-md-2">Search</button>
+            <div >
+                  <input className="inputSearch" type="search" placeholder="Type a food name..." onChange = {this.searchFoodOnChange}/>   
             </div>
         )
     }

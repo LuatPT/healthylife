@@ -1,9 +1,9 @@
 import React from 'react'
-import FoodDetail from '../food/FoodDetail'
-import SearchFood from '../food/SearchFood'
+import ExerciseDetail from '../Exercise/ExerciseDetail'
+import SearchExercise from '../Exercise/SearchExercise'
 
 
-class FoodList extends React.Component{
+class ExerciseList extends React.Component{
     constructor(props){
         super(props);
         this.state ={
@@ -11,67 +11,64 @@ class FoodList extends React.Component{
         }
     }
 
-    searchFood = (value) => {
+    searchExercise = (value) => {
         this.setState({
             keySearch: value
         })
     }
     render(){
-        var foods: Object[] = [
+        var exercises: Object[] = [
             {
                 id:1,
-                name: "Rice",
+                name: "Bench Press",
                 image: "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
-                set: 120,
+                set: 3,
                 rep: 10,
-                type: "Carb",
-                content: ""
+                type: "Chest",
+                content: "It's good for chest"
             },
              {
                 id:2,
-                name: "Potato",
+                name: "Lat Pulldown",
                 image: "https://cdn.britannica.com/89/170689-131-D20F8F0A/Potatoes.jpg",
-                set: 200,
-                rep: 100,
-                type: "Carb",
-                content: ""
+                set: 3,
+                rep: 12,
+                type: "Chest"
+                content: "It's good for lat and back"
             },
              {
                 id:3,
-                name: "Whey",
+                name: "Squat",
                 image: "https://vinmec-prod.s3.amazonaws.com/images/20191030_074353_321093_Whey-Protein.max-800x800.jpg",
-                set: 0,
-                rep: 30,
-                type: "Protein",
-                content: ""
+                set: 4,
+                rep: 8,
+                content: "It's good for leg"
             },
              {
                 id:4,
-                name: "Peanut",
+                name: "Deadlift",
                 image: "https://www.aboutpeanuts.com/images/com_joomrecipe/cropped-Raw-Shelled-Peanuts.jpg",
-                set: 120,
-                rep: 100,
-                type: "Fat",
-                content: ""
+                set: 4,
+                rep: 8,
+                content: "It's good for hip"
             },
              {
                 id:5,
-                name: "Salmon Fish",
+                name: "Shoulder Press",
                 image: "https://images.thefishsite.com/fish/articles/processing/salmon-fillet.jpeg?profile=article-full",
-                set: 150,
-                rep: 50,
-                type: "Protein",
-                content: ""
+                set: 2,
+                rep: 8,
+                content: "Shoulder"
             }
         ];
-        const filterListFood = foods.filter(ele => ele.name.toLowerCase().includes(this.state.keySearch.toLowerCase()) === true);
+        const filterListExercise = exercises.filter(ele => ele.name.toLowerCase().includes(this.state.keySearch.toLowerCase()) === true);
         return(
             <div>
-                <SearchFood  searchFood={this.searchFood}/>
+                <SearchExercise  searchExercise={this.searchExercise}/>
                 <div className="row justify-content-center">
                     {
-                        filterListFood.map((ele,key) => (
-                            <FoodDetail key={key} {...ele} />
+                        filterListExercise.map((ele,key) => (
+                            <ExerciseDetail key={key} {...ele} />
                         ))
                     }
                 </div>
@@ -80,4 +77,4 @@ class FoodList extends React.Component{
     }
 }
 
-export default FoodList;
+export default ExerciseList;

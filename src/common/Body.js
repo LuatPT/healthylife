@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodList from '../food/FootList'
+
 class Body extends React.PureComponent{
 
     render(){

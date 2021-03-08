@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* Food Detail */
+.foodDetail{
+  border: 0.5px solid black;
+  margin: 2%;
+  padding: 2%;
+  height: 300px;
+  text-align: left;
+}
+
+.inputSearch{
+  width: auto;
+}
