@@ -3,7 +3,7 @@ import React from 'react';
 import Footer from './common/Footer';
 import Body from './common/Body';
 import Header from './common/Header';
-import withModal from './common/WrapperComponent';
+import WrapperComponent from './common/WrapperComponent';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -12,38 +12,38 @@ class App extends React.Component {
             {
                 id: 1,
                 name: "Home",
-                path: "/",
-                component: Body
+                path: "/food",
+                component: 'food'
             },
              {
                 id: 2,
                 name: "Find meal",
                 path: "/findMeal",
-                component: Body
+                component: 'excercise'
             },
              {
                 id: 3,
                 name: "Hire a PT",
                 path: "/hirePT",
-                component: Body
+                component: 'excercise'
             },
              {
                 id: 4,
                 name: "Excercise guide",
                 path: "/findExercise",
-                component: Body
+                component: 'excercise'
             }, 
             {
                 id: 5,
                 name: "Caculator",
                 path: "/caculator",
-                component: Body
+                component: 'excercise'
             },
              {
                 id: 6,
                 name: "About me",
                 path: "/aboutMe",
-                component: Body
+                component: 'excercise'
             }
         ];
         return (
@@ -55,10 +55,12 @@ class App extends React.Component {
                   menus.map((ele,key) =>
                     {
                       
-                      let MyComponent = ele.component;
+                      let typeComponent = ele.component;
                       return(
                         <Route key={key} path={ele.path}>
-                          <MyComponent/>
+                          {
+                            WrapperComponent(Body, typeComponent)
+                          }
                         </Route>
 
                       )

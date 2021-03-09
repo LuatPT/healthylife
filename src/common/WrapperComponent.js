@@ -1,8 +1,7 @@
 import React from 'react'
-var createReactClass = require('create-react-class');
 
-const withModal = (WrapperComponent:String) => (
-    <WrapperComponent />
+const WrapperComponent = (TempComponent, typeMe) => (
+    <TempComponent typeComponent={typeMe}/>
 )
 
-export default withModal;
+export default WrapperComponent;

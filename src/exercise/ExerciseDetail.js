@@ -6,7 +6,7 @@ class ExerciseDetail extends React.PureComponent{
         var ele : Object = this.props;
         return(
             <div className="col-md-3 ExerciseDetail">
-                <img src={ele.image} class="center" width="100%" height="55%" alt={ele.name}/>
+                <img src={ele.image} className="center" width="100%" height="55%" alt={ele.name}/>
                 {/* <p>{ele.id}</p> */}
                 <p>Name:  {ele.name}</p>
                 <p>Volume: {ele.set} x {ele.rep} </p>

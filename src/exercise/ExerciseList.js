@@ -1,6 +1,6 @@
 import React from 'react'
-import ExerciseDetail from '../Exercise/ExerciseDetail'
-import SearchExercise from '../Exercise/SearchExercise'
+import ExerciseDetail from '../exercise/ExerciseDetail'
+import SearchExercise from '../exercise/SearchExercise'
 
 
 class ExerciseList extends React.Component{
@@ -33,7 +33,7 @@ class ExerciseList extends React.Component{
                 image: "https://cdn.britannica.com/89/170689-131-D20F8F0A/Potatoes.jpg",
                 set: 3,
                 rep: 12,
-                type: "Chest"
+                type: "Chest",
                 content: "It's good for lat and back"
             },
              {
