@@ -7,7 +7,7 @@ class Header extends React.PureComponent{
             {
                 id: 1,
                 name: "Home",
-                path: "/",
+                path: "/findFood",
             },
              {
                 id: 2,

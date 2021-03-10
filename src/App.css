@@ -38,7 +38,7 @@
 }
 
 /* Food Detail */
-.foodDetail{
+.foodDetail, .exerciseDetail{
   border: 0.5px solid black;
   margin: 2%;
   padding: 2%;

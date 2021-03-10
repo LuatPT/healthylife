@@ -1,6 +1,6 @@
 import React from 'react';
-import FoodList from '../food/FoodList';
-import ExerciseList from '../exercise/ExerciseList'
+import FoodListContainer from '../member/container/food/FoodListContainer';
+import ExerciseListContainer from '../member/container/exercise/ExerciseListContainer'
 
 class Body extends React.PureComponent{
 
@@ -10,7 +10,7 @@ class Body extends React.PureComponent{
         return(
             <div>
                 {
-                    typeComponent === "excercise" ? <ExerciseList /> : <FoodList /> 
+                    typeComponent === "excercise" ? <ExerciseListContainer /> : <FoodListContainer /> 
                 }
             </div>
         )
