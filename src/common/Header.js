@@ -14,11 +14,11 @@ class Header extends React.PureComponent{
                 name: "Find meal",
                 path: "/findMeal",
             },
-             {
-                id: 3,
-                name: "Hire a PT",
-                path: "/hirePT",
-            },
+            //  {
+            //     id: 3,
+            //     name: "Hire a PT",
+            //     path: "/hirePT",
+            // },
              {
                 id: 4,
                 name: "Excercise guide",

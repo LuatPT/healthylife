@@ -21,14 +21,14 @@ class App extends React.Component {
                 id: 2,
                 name: "Find meal",
                 path: "/findMeal",
-                component: 'excercise'
+                component: 'food'
             },
-             {
-                id: 3,
-                name: "Hire a PT",
-                path: "/hirePT",
-                component: 'excercise'
-            },
+            //  {
+            //     id: 3,
+            //     name: "Hire a PT",
+            //     path: "/hirePT",
+            //     component: 'excercise'
+            // },
              {
                 id: 4,
                 name: "Excercise guide",
@@ -39,7 +39,7 @@ class App extends React.Component {
                 id: 5,
                 name: "Caculator",
                 path: "/caculator",
-                component: 'excercise'
+                component: 'caculator'
             },
              {
                 id: 6,
