@@ -79,16 +79,16 @@ class CaculatorForm extends React.Component {
                     <input type="radio" id="male" value="male" name="gender" ref={this.gender}/><label htmlFor="male" className="light">Nam</label><br/>
                     <input type="radio" id="female" value="female" name="gender" ref={this.gender}/><label htmlFor="female" className="light">Nữ</label>
                     
-                    <label htmlFor="height">Chiều cao:</label>
+                    <label htmlFor="height">Chiều cao(cm):</label>
                     <input type="number" id="height" name="height" placeholder="Nhập chiều cao của bạn..." ref={this.height}/>
                     
-                    <label htmlFor="weight">Cân nặng:</label>
+                    <label htmlFor="weight">Cân nặng(kg):</label>
                     <input type="number" id="weight" name="weight" placeholder="Nhập cân nặng của bạn..." ref={this.weight}/>
 
                 </fieldset>
 
                 <fieldset>
-                     <label htmlFor="weight">Body Fat:</label>
+                     <label htmlFor="weight">Body Fat(%):</label>
                     <input type="number" id="bodyFat" name="bodyFat" placeholder="Nhập chỉ số BDF..."ref={this.bodyFat} />
                     <legend><span className="number">2</span> Thông tin tập luyện</legend>
                     <label htmlFor="volumeTrainer">Chế độ tập luyện</label>
@@ -106,7 +106,7 @@ class CaculatorForm extends React.Component {
                                 </optgroup>
                     </select>
 
-                    <label>Mong muốn</label>
+                    <label>Mục đích</label>
                     <input type="checkbox" id="decreaseWeight" value="decrease" name="target" ref={this.target}/>
                     <label className="light" htmlFor="decreaseWeight">Giảm cân</label><br/>
                     <input type="checkbox" id="keepWeight" value="keep" name="target" ref={this.target}/>

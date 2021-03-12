@@ -17,9 +17,9 @@ class Result extends React.Component {
         }
         return (
             <div className="showResult">
-                    <p>BMR của bạn là: {bmr.toFixed(2)}</p>
-                    <p>TDEE của bạn là: {tdee.toFixed(2)}</p>
-                    <p>BMI của bạn là: {bmi.toFixed(2)}</p>
+                    <p>BMR của bạn là: <span className="result_val">{bmr.toFixed(2)}</span></p>
+                    <p>TDEE của bạn là: <span className="result_val">{tdee.toFixed(2)}</span></p>
+                    <p>BMI của bạn là: <span className="result_val">{bmi.toFixed(2)}</span></p>
                     <p>{message}</p>
             </div>
         )
