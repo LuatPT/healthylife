@@ -5,8 +5,6 @@ import Body from './common/Body';
 import Header from './common/Header';
 import WrapperComponent from './common/WrapperComponent';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import FoodList from './member/component/food/FoodList';
-import ExerciseList from './member/component/exercise/ExerciseList';
 
 class App extends React.Component {
   render(){

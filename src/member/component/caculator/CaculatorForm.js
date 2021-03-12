@@ -1,16 +1,66 @@
 import React from 'react'
+import Result from './Result'
+
 class CaculatorForm extends React.Component {
+    
     constructor(props){
         super(props);
-        // this.state = {
-        //     name: "",
-        //     age:"",
-        //     gender: "",
-        //     heigh: "",
-        //     weight: "",
-        //     volumeTrainer: "",
-        //     target: ""
-        // }
+
+        this.state = {
+            bmi: 0,
+            bmr: 0,
+            tdee: 0
+        }
+
+        //Create ref to get value current
+        this.name = React.createRef();
+        this.age = React.createRef();
+        this.gender = React.createRef();
+        this.height = React.createRef();
+        this.weight = React.createRef();
+        this.bodyFat = React.createRef();
+        this.volumeTrainer = React.createRef();
+        this.target = React.createRef();  
+    }
+    caculatorBMRTDEE = (eve) => {
+        eve.preventDefault();
+
+        var weight = Number(this.weight.current.value);
+        
+        var bodyFat = Number(this.bodyFat.current.value);
+
+        var volumeTrainer = Number(this.volumeTrainer.current.value);
+
+        var height = Number(this.height.current.value);
+
+        var target = this.target.current.checked;
+
+        var bmrTemp =  (21.6*weight*(100-bodyFat ) )/100;
+       
+        var bmiTemp = weight/(height*height)*10000;
+        switch (target) {
+            case "decrease":
+                bmrTemp = bmrTemp + 200;
+                break;
+            case "keep":
+                break;
+            case "increase":
+                bmrTemp = bmrTemp - 200;
+                break;
+            default:
+                break;
+        }
+
+        var tdeeTemp = bmrTemp*volumeTrainer;
+        
+        if (bmrTemp !== 0 & tdeeTemp !== 0) {
+            this.setState({
+                bmi: bmiTemp,
+                bmr: bmrTemp,
+                tdee: tdeeTemp,
+
+            })
+        }
     }
     render(){
         return (
@@ -18,50 +68,56 @@ class CaculatorForm extends React.Component {
                <form action="index.html" method="post">
                 <h2>Nhập thông tin của bạn:</h2><br/>
                 <fieldset>
-                    <legend><span class="number">1</span> Thông tin cơ bản</legend>
-                    <label for="name">Tên:</label>
-                    <input type="text" id="name" name="name" placeholder="Nhập tên của bạn..." />
+                    <legend><span className="number">1</span> Thông tin cơ bản</legend>
+                    <label htmlFor="name">Tên:</label>
+                    <input type="text" id="name" name="name" placeholder="Nhập tên của bạn..." ref={this.name}/>
 
-                    <label for="age">Tuổi:</label>
-                    <input type="number" id="age" name="age" placeholder="Nhập số tuổi của bạn..."/>
+                    <label htmlFor="age">Tuổi:</label>
+                    <input type="number" id="age" name="age" placeholder="Nhập số tuổi của bạn..." ref={this.age}/>
 
                     <label>Giới tính:</label>
-                    <input type="radio" id="male" value="male" name="gender"/><label for="male" class="light">Nam</label><br/>
-                    <input type="radio" id="female" value="female" name="gender"/><label for="female" class="light">Nữ</label>
+                    <input type="radio" id="male" value="male" name="gender" ref={this.gender}/><label htmlFor="male" className="light">Nam</label><br/>
+                    <input type="radio" id="female" value="female" name="gender" ref={this.gender}/><label htmlFor="female" className="light">Nữ</label>
                     
-                    <label for="height">Chiều cao:</label>
-                    <input type="number" id="height" name="height" placeholder="Nhập chiều cao của bạn..."/>
+                    <label htmlFor="height">Chiều cao:</label>
+                    <input type="number" id="height" name="height" placeholder="Nhập chiều cao của bạn..." ref={this.height}/>
                     
-                    <label for="weight">Cân nặng:</label>
-                    <input type="number" id="weight" name="weight" placeholder="Nhập cân nặng của bạn..."/>
+                    <label htmlFor="weight">Cân nặng:</label>
+                    <input type="number" id="weight" name="weight" placeholder="Nhập cân nặng của bạn..." ref={this.weight}/>
 
                 </fieldset>
 
                 <fieldset>
-                    <legend><span class="number">2</span> Thông tin tập luyện</legend>
-                    <label for="volumeTrainer">Chế độ tập luyện</label>
-                    <select id="volumeTrainer" name="volumeTrainer">
+                     <label htmlFor="weight">Body Fat:</label>
+                    <input type="number" id="bodyFat" name="bodyFat" placeholder="Nhập chỉ số BDF..."ref={this.bodyFat} />
+                    <legend><span className="number">2</span> Thông tin tập luyện</legend>
+                    <label htmlFor="volumeTrainer">Chế độ tập luyện</label>
+                    <select id="volumeTrainer" name="volumeTrainer" ref={this.volumeTrainer}>
                                 <optgroup label="Newbie">
-                                    <option value="frontend_developer">1-3 buổi/tuần</option>
+                                    <option value="1.2">Ít vận động</option>
+                                    <option value="1.375">1-3 buổi/tuần</option>
                                 </optgroup>
                                 <optgroup label="Normal">
-                                    <option value="android_developer">3-5 buổi/tuần</option>
+                                    <option value="1.55">3-5 buổi/tuần</option>
+                                    <option value="1.725">6-7 buổi/tuần</option>
                                 </optgroup>
                                 <optgroup label="Pro">
-                                    <option value="business_owner">Trên 6 buổi/tuần</option>
+                                    <option value="1.9">2 buổi/ngày</option>
                                 </optgroup>
                     </select>
 
                     <label>Mong muốn</label>
-                    <input type="checkbox" id="decreaseWeight" value="decrease" name="target" />
-                    <label class="light" for="decreaseWeight">Giảm cân</label><br/>
-                    <input type="checkbox" id="keepWeight" value="keep" name="target"/>
-                    <label class="light" for="keepWeight">Duy trì</label><br/>
-                    <input type="checkbox" id="increaseWeight" value="increase" name="target"/>
-                    <label class="light" for="increaseWeight">Tăng cân</label>
+                    <input type="checkbox" id="decreaseWeight" value="decrease" name="target" ref={this.target}/>
+                    <label className="light" htmlFor="decreaseWeight">Giảm cân</label><br/>
+                    <input type="checkbox" id="keepWeight" value="keep" name="target" ref={this.target}/>
+                    <label className="light" htmlFor="keepWeight">Duy trì</label><br/>
+                    <input type="checkbox" id="increaseWeight" value="increase" name="target" ref={this.target}/>
+                    <label className="light" htmlFor="increaseWeight">Tăng cân</label>
                 </fieldset>
-                <button type="submit">Tính Toán</button>
+                <button type="submit" onClick={this.caculatorBMRTDEE}>Tính Toán</button>
                 </form>
+
+                 <Result bmi={this.state.bmi} bmr={this.state.bmr} tdee={this.state.tdee} />
             </div>
         )
     }

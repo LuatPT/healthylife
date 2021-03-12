@@ -62,7 +62,9 @@
 .caculatorForm{
   text-align: left;
 }
-
+.showResult{
+  text-align: center;
+}
 *,
 *:before,
 *:after {
