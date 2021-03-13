@@ -9,7 +9,7 @@ class SearchExercise extends React.PureComponent{
     render(){
         return(
             <div >
-                  <input className="inputSearch" type="search" placeholder="Type a Exercise name..." onChange = {this.searchExerciseOnChange}/>   
+                  <input className="inputSearch" type="text" placeholder="Type a Exercise name..." onChange = {this.searchExerciseOnChange}/>   
             </div>
         )
     }

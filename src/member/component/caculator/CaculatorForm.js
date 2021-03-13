@@ -61,6 +61,8 @@ class CaculatorForm extends React.Component {
 
             })
         }
+        //Show result panel
+        document.getElementById("showResult").style.display = "inline";
     }
     render(){
         return (
@@ -70,10 +72,10 @@ class CaculatorForm extends React.Component {
                 <fieldset>
                     <legend><span className="number">1</span> Thông tin cơ bản</legend>
                     <label htmlFor="name">Tên:</label>
-                    <input type="text" id="name" name="name" placeholder="Nhập tên của bạn..." ref={this.name}/>
+                    <input type="text" id="name" name="name" className="textForm" placeholder="Nhập tên của bạn..." ref={this.name}/>
 
                     <label htmlFor="age">Tuổi:</label>
-                    <input type="number" id="age" name="age" placeholder="Nhập số tuổi của bạn..." ref={this.age}/>
+                    <input type="number" id="age" name="age" className="textForm" placeholder="Nhập số tuổi của bạn..." ref={this.age}/>
 
                     <label>Giới tính:</label>
                     <input type="radio" id="male" value="male" name="gender" ref={this.gender}/><label htmlFor="male" className="light">Nam</label><br/>

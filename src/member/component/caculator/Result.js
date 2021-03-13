@@ -4,7 +4,7 @@ class Result extends React.Component {
     render(){
         var {bmi,bmr,tdee} = this.props;
         var message = "BMI chỉ ra bạn đang ";
-        if(bmi == 0){
+        if(bmi === 0){
             message = "";
         }else if(bmi < 18.5){
             message = message + "THIẾU CÂN";
@@ -16,7 +16,7 @@ class Result extends React.Component {
             message = message + "BÉO PHÌ";
         }
         return (
-            <div className="showResult">
+            <div className="showResult" id="showResult">
                     <p>BMR của bạn là: <span className="result_val">{bmr.toFixed(2)}</span></p>
                     <p>TDEE của bạn là: <span className="result_val">{tdee.toFixed(2)}</span></p>
                     <p>BMI của bạn là: <span className="result_val">{bmi.toFixed(2)}</span></p>

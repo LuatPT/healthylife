@@ -9,7 +9,7 @@ class SearchFood extends React.PureComponent{
     render(){
         return(
             <div >
-                  <input className="inputSearch" type="search" placeholder="Type a food name..." onChange = {this.searchFoodOnChange}/>   
+                  <input className="inputSearch" type="text" placeholder="Type a food name..." onChange = {this.searchFoodOnChange}/>   
             </div>
         )
     }

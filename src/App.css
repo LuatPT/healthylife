@@ -70,6 +70,7 @@
 }
 .showResult{
   text-align: center;
+  display: none;
 }
 *,
 *:before,
@@ -97,7 +98,7 @@ h1 {
   text-align: center;
 }
 
-input[type="text"],
+.textForm,
 input[type="password"],
 input[type="date"],
 input[type="datetime"],

@@ -29,11 +29,11 @@ class Header extends React.PureComponent{
                 name: "Caculator",
                 path: "/caculator",
             },
-             {
-                id: 6,
-                name: "About me",
-                path: "/aboutMe",
-            }
+            //  {
+            //     id: 6,
+            //     name: "About me",
+            //     path: "/aboutMe",
+            // }
         ];
         return (
             <div>

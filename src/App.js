@@ -39,12 +39,12 @@ class App extends React.Component {
                 path: "/caculator",
                 component: 'caculator'
             },
-             {
-                id: 6,
-                name: "About me",
-                path: "/aboutMe",
-                component: 'excercise'
-            }
+            //  {
+            //     id: 6,
+            //     name: "About me",
+            //     path: "/aboutMe",
+            //     component: 'excercise'
+            // }
         ];
         return (
         <Router>
